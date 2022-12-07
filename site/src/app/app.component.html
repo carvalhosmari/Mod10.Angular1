@@ -1,0 +1,35 @@
+<!-- Navbar -->
+<app-header (elementCreated)="onElementCreated($event)" (searchEvent)="onSearchSubmit($event)"></app-header>
+<!-- End Navbar -->
+
+<!-- Main -->
+<main id="main">
+
+  <!-- Carousel -->
+  <app-carousel></app-carousel>
+  <!-- End Carousel -->
+
+  <!-- Features -->
+  <app-features [featureData]="data.features" (elementCreated)="onElementCreated($event)"></app-features>
+  <!-- End Features -->
+
+  <!-- About -->
+  <app-about [aboutData]="data.about" (elementCreated)="onElementCreated($event)"></app-about>
+  <!-- End About -->
+
+  <!-- Address -->
+  <app-address [addressData]="data.address" (elementCreated)="onElementCreated($event)"></app-address>
+  <!-- End Address -->
+
+  <!-- Contact -->
+  <app-contact></app-contact>
+  <!-- End Contact -->
+
+</main>
+<!-- End Main -->
+
+<!-- Footer -->
+<app-footer></app-footer>
+<!-- End Footer -->
+
+<script src="./assets/bootstrap/js/bootstrap.min.js"></script>
