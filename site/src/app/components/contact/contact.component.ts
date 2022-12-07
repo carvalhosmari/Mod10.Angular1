@@ -11,14 +11,16 @@ export class ContactComponent implements OnInit {
   @Output()
   public elementCreated: EventEmitter<string> = new EventEmitter<string>();
 
+  @Output()
+  public sendForm: EventEmitter<ContactFormData> = new EventEmitter<ContactFormData>();
+
   public formData: ContactFormData = {
     email: "",
     message: ""
   }
 
   public submitForm(): void {
-    alert('clicou');
-    console.log(this.formData);
+    this.sendForm.emit(this.formData);
   }
 
   ngOnInit(): void {
