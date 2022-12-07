@@ -1,10 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.css']
 })
-export class FooterComponent {
+export class FooterComponent implements OnInit {
+
+  @Output()
+  public elementCreated: EventEmitter<string> = new EventEmitter<string>();
+
+  ngOnInit(): void {
+    this.elementCreated.emit('footer');
+  }
 
 }

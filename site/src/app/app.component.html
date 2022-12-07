@@ -6,7 +6,7 @@
 <main id="main">
 
   <!-- Carousel -->
-  <app-carousel></app-carousel>
+  <app-carousel (elementCreated)="onElementCreated($event)"></app-carousel>
   <!-- End Carousel -->
 
   <!-- Features -->
@@ -22,14 +22,14 @@
   <!-- End Address -->
 
   <!-- Contact -->
-  <app-contact></app-contact>
+  <app-contact (elementCreated)="onElementCreated($event)"></app-contact>
   <!-- End Contact -->
 
 </main>
 <!-- End Main -->
 
 <!-- Footer -->
-<app-footer></app-footer>
+<app-footer (elementCreated)="onElementCreated($event)"></app-footer>
 <!-- End Footer -->
 
 <script src="./assets/bootstrap/js/bootstrap.min.js"></script>

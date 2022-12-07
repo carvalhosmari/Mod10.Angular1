@@ -1,12 +1,15 @@
 import { ContactFormData } from './../../models/contact-form-data.model';
-import { Component } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css']
 })
-export class ContactComponent {
+export class ContactComponent implements OnInit {
+
+  @Output()
+  public elementCreated: EventEmitter<string> = new EventEmitter<string>();
 
   public formData: ContactFormData = {
     email: "",
@@ -14,7 +17,11 @@ export class ContactComponent {
   }
 
   public submitForm(): void {
-    alert('clicou')
-    console.log(this.formData)
+    alert('clicou');
+    console.log(this.formData);
+  }
+
+  ngOnInit(): void {
+    this.elementCreated.emit('contact');
   }
 }
